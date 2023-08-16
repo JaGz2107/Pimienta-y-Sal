@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <%- include('./partials/head') %>
+   </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('./partials/Navbar') %>
+        <!-- Right-sided navbar links. Hide them on small screens -->
+        <%- include('./partials/Right-sided') %>
+
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Page content -->
+    <%- include('./partials/Page-content') %>
+
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center">
+            <%= plato?.nombre %>
+          </h1>
+          <br />
+          <% if(plato?.descripcion != null){ %>
+          <h4>
+            <%= plato?.descripcion %>
+          </h4>
+          <% }else{ %>
+            <h4>
+              Plato Tipico
+            </h4>
+          <% } %>
+          <p class="ps-text-grey">
+            <%= plato?.precio %>
+          </p>
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="/images/<%= plato?.img %>"
+            class="ps-round ps-image ps-opacity-min"
+            alt="<%= plato?.nombre %>"
+          />
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <%- include('./partials/footer') %>
+    </div>
+  </body>
+</html>
